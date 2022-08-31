@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  nginx:
+    image: nginx:1.19-alpine
+    volumes:
+      - "./conf/nginx/default.conf:/etc/nginx/templates/default.conf.template"
+    environment:
+      ANGULAR_HOST: ${NGINX_ANGULAR_HOST}
+      ANGULAR_PORT: ${NGINX_ANGULAR_PORT}
+      NESTJS_HOST: ${NGINX_NESTJS_HOST}
+      NESTJS_PORT: ${NGINX_NESTJS_PORT}
+    ports:
+      - ${NGINX_REVERSE_PROXY_PORT}:80
