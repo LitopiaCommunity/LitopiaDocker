@@ -1,9 +1,15 @@
 # LitopiaDocker
-Litopia docker compose env to help devloppement and prepare production
+Litopia docker compose env to help development and prepare production
 
-## Why used reverse proxy ?
-When litopia will be deploy it will need authentification that are provide by the nestjs api and we want to store 
+## Nginx
+### Why used reverse proxy ?
+When Litopia will be deployed it will need authentification that are provide by the nestjs api, and we want to store 
 the cookie of this authentification on the same adresse as the angular client
+
+## Postgres
+### Why used postgres ?
+We use postgres in Litopia application to store player information. When the docker-compose.yml will be load,
+it will automatically create the needed database.
 
 ## Usage
 To use this docker file you first need to install docker. After that you will create `.env` file base from `.env.exemple` file.
